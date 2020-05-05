@@ -1,23 +1,52 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, StatusBar, TextInput, Dimensions, Platform } from 'react-native';
-import { render } from 'react-dom';
+import {
+  StyleSheet,
+  Text,
+  View,
+  StatusBar,
+  TextInput,
+  Dimensions,
+  Platform,
+  ScrollView,
+} from 'react-native';
+import ToDo from "./ToDo";
 
-const { height, width } = Dimensions.get("window");
+const { height, width } = Dimensions.get('window');
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <StatusBar barStyle="light-content"></StatusBar>
-      <Text style={styles.title}>To DO</Text>
-      <View>
-        <TextInput style={styles.card}></TextInput>
+export default class App extends React.Component {
+  state = {
+    newToDo: ""
+  };
+  render() {
+    const {newToDo} = this.state;
+    return (
+      <View style={styles.container}>
+        <StatusBar barStyle="light-content"></StatusBar>
+        <Text style={styles.title}>To DO</Text>
+        <View style={styles.card}>
+          <TextInput
+            style={styles.input}
+            placeholder={'New To Do'}
+            value={newToDo}
+            onChangeText={this._controllNewToDo}
+            placeholderTextColor={'#999'}
+            returnKeyType={'done'}
+            autoCorrect={false}
+          />
+          <ScrollView>
+            <ToDo />
+          </ScrollView>
+        </View>
       </View>
-    </View>
-  );
+    );
+  }
+  _controllNewToDo = text => {
+    this.setState({
+      newToDo: text,
+    });
+  };
+  
 }
-
-
-
 
 const styles = StyleSheet.create({
   container: {
@@ -27,32 +56,37 @@ const styles = StyleSheet.create({
     // justifyContent: 'center',
   },
   title: {
-    color: "white",
+    color: 'white',
     fontSize: 30,
     marginTop: 40,
-    fontWeight: "200",
-    marginBottom: 30
+    fontWeight: '200',
+    marginBottom: 30,
   },
   card: {
-    backgroundColor: "white",
+    backgroundColor: 'white',
     flex: 1,
     width: width - 25,
     borderTopRightRadius: 10,
     borderTopLeftRadius: 10,
     ...Platform.select({
       ios: {
-        shadowColor:"rgb(50,50,50)",
+        shadowColor: 'rgb(50,50,50)',
         shadowOpacity: 0.5,
         shadowRadius: 5,
-        shadowOffset:{
+        shadowOffset: {
           height: -1,
-          width: 0
-        }
+          width: 0,
+        },
       },
       android: {
-        elevation: 3
-      }
-    }
-    )
+        elevation: 3,
+      },
+    }),
+  },
+  input: {
+    padding: 20,
+    borderBottomColor: '#bbb',
+    borderBottomWidth: 1,
+    fontSize: 25,
   },
 });
