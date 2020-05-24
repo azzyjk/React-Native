@@ -1,19 +1,40 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, StatusBar } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import symbolicateStackTrace from "react-native/Libraries/Core/Devtools/symbolicateStackTrace";
+import { LinearGradient } from "expo-linear-gradient";
 
-export default function Weather({ temp }) {
+const weatherOption = {
+  Thunderstorm: { iconName: "weather-hail", gradient: ["#4DA0B0", "#D39D38"] },
+  Drizzle: { iconName: "weather-hail", gradient: ["#4DA0B0", "#D39D38"] },
+  Rain: { iconName: "weather-hail", gradient: ["#4DA0B0", "#D39D38"] },
+  Snow: { iconName: "weather-hail", gradient: ["#4DA0B0", "#D39D38"] },
+  Atmosphere: { iconName: "weather-hail", gradient: ["#4DA0B0", "#D39D38"] },
+  Clear: { iconName: "weather-hail", gradient: ["#4DA0B0", "#D39D38"] },
+  Clouds: { iconName: "weather-hail", gradient: ["#4DA0B0", "#D39D38"] },
+  Haze: { iconName: "weather-hail", gradient: ["#4DA0B0", "#D39D38"] },
+  Mist: { iconName: "weather-hail", gradient: ["#4DA0B0", "#D39D38"] },
+};
+
+export default function Weather({ temp, condition }) {
+  console.log(condition);
   return (
-    <View style={styles.container}>
+    <LinearGradient
+      colors={weatherOption["Mist"].gradient}
+      style={styles.container}
+    >
+      <StatusBar barStyle="light-content" />
       <View style={styles.halfContainer}>
-        <MaterialCommunityIcons size={96} name="weather-lightning-rainy" />
+        <MaterialCommunityIcons
+          size={96}
+          name={weatherOption[condition].iconName}
+          color="white"
+        />
       </View>
       <View style={styles.halfContainer}>
         <Text style={styles.temp}>{temp}°C</Text>
       </View>
-    </View>
+    </LinearGradient>
   );
 }
 
@@ -28,7 +49,8 @@ Weather.propTypes = {
     "Clear",
     "Clouds",
     "Haze",
-  ]).isRequired,
+    "Mist",
+  ]), // isRequired
 };
 
 const styles = StyleSheet.create({
@@ -39,6 +61,7 @@ const styles = StyleSheet.create({
   },
   temp: {
     fontSize: 42,
+    color: "white",
   },
   halfContainer: {
     flex: 1,
