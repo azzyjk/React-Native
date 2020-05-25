@@ -148,6 +148,8 @@ testTwo:{
 
 <img src="./Picture/flex/flex51.png" width="30%">
 
+---
+
 ### 위치 받아오기
 
 expo는 모듈을 사용할때 import해주는 방식이라 위치를 받아올려면 현재 개발중인 폴더에 간 다음
@@ -182,6 +184,8 @@ componentDidMount() {
 
 를 입력한뒤 이용해주면 된다.
 
+---
+
 ### axios
 
 axios는 javascript에서 fetch와 같은 역활을 하지만 기능과 사용법이 다르다.
@@ -205,6 +209,8 @@ getWeather = async () => {
   const data = await axios.get(`인터넷 주소`);
 };
 ```
+
+---
 
 ### API 키값 숨기기
 
