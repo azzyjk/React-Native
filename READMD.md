@@ -2,24 +2,41 @@
 
 ## 목차
 
+> 1. 개발한 것
+>    - [Get Weather App](#get-weather-app)
+>    - To Do List App
 > 1. 요구 프로그램
 >
->    - Homebrew
->    - afds
+>    - [Homebrew](#homebrew)
+>    - NodeJS & NPM
+>    - Expo-Cli
+>    - Xcode (for simulator)
+>    - Android studio
+>    - Watchman
+>
+> 1. 정리
+
+## 개발한 것
+
+Get Weather App
+<a href="https://github.com/azzyjk/React-Native/tree/master/getWeather"><img src="./Picture/getWeather.png" width="30%"></a>
+
+To Do List App
+<a href="https://github.com/azzyjk/React-Native/tree/master/TodoList"><img src="./Picture/toDo.png" width="30%"></a>
 
 ## 요구 프로그램
 
 1. Homebrew
 
-1. nodejs (more 12) & npm (more 6)
+1. NodeJs (more 12) & NPM (more 6)
 
-1. expo
+1. Expo-Cli
 
 1. Xcode (for simulator)
 
-1. android studio
+1. Android studio
 
-1. watchman
+1. Watchman
 
 ### Homebrew
 
