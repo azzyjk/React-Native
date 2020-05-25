@@ -18,10 +18,10 @@
 
 ## 개발한 것
 
-Get Weather App
+Get Weather App  
 <a href="https://github.com/azzyjk/React-Native/tree/master/getWeather"><img src="./Picture/getWeather.png" width="30%"></a>
 
-To Do List App
+To Do List App  
 <a href="https://github.com/azzyjk/React-Native/tree/master/TodoList"><img src="./Picture/toDo.png" width="30%"></a>
 
 ## 요구 프로그램
