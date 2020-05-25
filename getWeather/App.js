@@ -24,7 +24,6 @@ export default class extends React.Component {
     this.setState({
       isLoading: false,
       temp,
-      // condition: "Clear",
       condition: weather[0].main,
     });
   };
