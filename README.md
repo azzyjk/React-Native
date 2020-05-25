@@ -54,6 +54,8 @@ Homebrew를 사용하면 맥에서 간단히 패키지를 설치할 수 있다.
     Homebrew 2.2.16
     Homebrew/homebrew-core (git revision 78552a; last commit 2020-05-14)
 
+---
+
 ### NodeJS
 
 NodeJS는 확장성 있는 네트워크 애플리케이션 개발에 사용되는 소프트웨어 플랫폼이다.
@@ -74,6 +76,8 @@ React Native는 Nodejs가 필요하므로 설치해야 한다.
 
     v12.16.3
 
+---
+
 ### NPM
 
 NPM(Node Package Manager)은 자바스크립트 프로그래밍 언어르 위한 패키지 관리자이다.
@@ -85,6 +89,8 @@ NodeJS를 설치하면 NPM도 같이 설치 되므로 NPM도 설치가 되었는
 설치가 되었으면 버전이 나온다.
 
     6.14.4
+
+---
 
 ### Expo-Cli
 
@@ -112,6 +118,8 @@ RN을 위한 설정이 미리 구성되어 있으며 native 파일들을 개발�
     expo init 'Project Name'
     cd 'Project Name'
     expo start
+
+---
 
 ## 정리
 
