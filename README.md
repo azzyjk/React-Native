@@ -24,7 +24,7 @@
 
 ## 개발한 것
 
-GetWeatherApp
+Get Weather App
 
 <a href="https://github.com/azzyjk/React-Native/tree/master/getWeather"><img src="./Picture/develop/getWeather.png" width="30%"></a>
 
