@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   StyleSheet,
   Text,
@@ -8,16 +8,16 @@ import {
   Dimensions,
   Platform,
   ScrollView,
-} from 'react-native';
-import { AppLoading } from 'expo';
-import ToDo from './ToDo';
-import uuidv1 from 'uuid/v1';
+} from "react-native";
+import { AppLoading } from "expo";
+import ToDo from "./ToDo";
+import uuidv1 from "uuid/v1";
 
-const { height, width } = Dimensions.get('window');
+const { height, width } = Dimensions.get("window");
 
 export default class App extends React.Component {
   state = {
-    newToDo: '',
+    newToDo: "",
     loadedToDos: false,
   };
   componentDidMount = () => {
@@ -35,11 +35,11 @@ export default class App extends React.Component {
         <View style={styles.card}>
           <TextInput
             style={styles.input}
-            placeholder={'New To Do'}
+            placeholder={"New To Do"}
             value={newToDo}
             onChangeText={this._controllNewToDo}
-            placeholderTextColor={'#999'}
-            returnKeyType={'done'}
+            placeholderTextColor={"#999"}
+            returnKeyType={"done"}
             autoCorrect={false}
             onSubmitEditing={this._addToDo}
           />
@@ -62,7 +62,7 @@ export default class App extends React.Component {
   };
   _addToDo = () => {
     const { newToDo } = this.state;
-    if (newToDo != '') {
+    if (newToDo != "") {
       this.setState((prevState) => {
         const ID = uuidv1();
         const newToDoObject = {
@@ -75,7 +75,7 @@ export default class App extends React.Component {
         };
         const newState = {
           ...prevState,
-          newToDo: '',
+          newToDo: "",
           toDos: {
             ...prevState.toDos,
             ...newToDoObject,
@@ -90,26 +90,26 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F23657',
-    alignItems: 'center',
+    backgroundColor: "#F23657",
+    alignItems: "center",
     // justifyContent: 'center',
   },
   title: {
-    color: 'white',
+    color: "white",
     fontSize: 30,
     marginTop: 40,
-    fontWeight: '200',
+    fontWeight: "200",
     marginBottom: 30,
   },
   card: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     flex: 1,
     width: width - 25,
     borderTopRightRadius: 10,
     borderTopLeftRadius: 10,
     ...Platform.select({
       ios: {
-        shadowColor: 'rgb(50,50,50)',
+        shadowColor: "rgb(50,50,50)",
         shadowOpacity: 0.5,
         shadowRadius: 5,
         shadowOffset: {
@@ -124,11 +124,11 @@ const styles = StyleSheet.create({
   },
   input: {
     padding: 20,
-    borderBottomColor: '#bbb',
+    borderBottomColor: "#bbb",
     borderBottomWidth: 1,
     fontSize: 25,
   },
   toDos: {
-    alignItems: 'center',
+    alignItems: "center",
   },
 });
