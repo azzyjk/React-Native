@@ -255,3 +255,7 @@ import API_KEY from "react-native-dotenv";
 
     // .gitignore
     .env
+
+---
+### async
+async는 비동기적으로 코드를 실행할 수 있는 방법이다.
