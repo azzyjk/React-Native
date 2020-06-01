@@ -8,6 +8,7 @@ import {
   Dimensions,
   Platform,
   ScrollView,
+  AsyncStorage,
 } from "react-native";
 import { AppLoading } from "expo";
 import ToDo from "./ToDo";
@@ -92,6 +93,7 @@ export default class App extends React.Component {
             ...newToDoObject,
           },
         };
+        this._saveState(newState.toDos);
         return { ...newState };
       });
     }
@@ -104,6 +106,7 @@ export default class App extends React.Component {
         ...prevState,
         ...toDos,
       };
+      this._saveState(newState.toDos);
       return { ...newState };
     });
   };
@@ -119,6 +122,7 @@ export default class App extends React.Component {
           },
         },
       };
+      this._saveState(newState.toDos);
       return { ...newState };
     });
   };
@@ -134,6 +138,7 @@ export default class App extends React.Component {
           },
         },
       };
+      this._saveState(newState.toDos);
       return { ...newState };
     });
   };
@@ -149,8 +154,12 @@ export default class App extends React.Component {
           },
         },
       };
+      this._saveState(newState.toDos);
       return { ...newState };
     });
+  };
+  _saveState = (newToDos) => {
+    const saveToDos = AsyncStorage.setItem("toDos", JSON.stringify(newToDos));
   };
 }
 
