@@ -4,8 +4,8 @@
 
 > 1. 개발한 것
 >
->    - [Get Weather App](#get-weather-app)
->    - [To Do List App](#to-do-list-app)
+>    - [Get Weather App](https://expo.io/@azzyjk/getWeather)
+>    - [To Do List App](https://expo.io/@azzyjk/TodoList)
 >
 > 1. 요구 프로그램
 >
@@ -21,8 +21,10 @@
 >    - [위치 받아오기](#위치-받아오기)
 >    - [axios](#axios)
 >    - [api 키값 숨기기](#api-키값-숨기기)
+>    - [async](#async)
+>    - [안드로이드 빌드하는법](#안드로이드-빌드하는법)
 
-## 개발한 것
+## 1. 개발한 것
 
 Get Weather App
 
@@ -32,7 +34,7 @@ To Do List App
 
 <a href="https://github.com/azzyjk/React-Native/tree/master/TodoList"><img src="./Picture/develop/toDo.png" width="30%"></a>
 
-## 요구 프로그램
+## 2. 요구 프로그램
 
 ### Homebrew
 
@@ -121,7 +123,7 @@ RN을 위한 설정이 미리 구성되어 있으며 native 파일들을 개발�
 
 ---
 
-## 정리
+## 3. 정리
 
 ### Flex
 
@@ -257,5 +259,61 @@ import API_KEY from "react-native-dotenv";
     .env
 
 ---
+
 ### async
 async는 비동기적으로 코드를 실행할 수 있는 방법이다.
+
+---
+
+### 안드로이드 빌드하는법
+우선 exp가 설치되어있는지 확인한다.
+아래와 같이 버전이 나오면 설치가 되어있는 것이다.
+
+    exp --version
+
+    57.2.1
+
+
+만약 아래와 같은 문구가 나오면 설치가 안되있는 것이다.
+
+    command not found: exp
+
+exp를 설치하기 위해 다음과 같은 명령어를 입력한다.
+
+    npm i -g exp
+
+설치가 완료되었다면 expo로 개발한 앱을 안드로이드로 빌드해준다.
+
+    exp build:android
+
+를 하면 된다.
+
+이후 빌드가 완료된 후
+
+    exp build:status
+
+를치면 아래와 같은 글이나오는데
+
+    [16:10:37] ### 1 | Android | https://expo.io/builds/620f155f-08b4-498b-848d-958ded8be437 ###
+    [16:10:37] Build finished.
+    [16:10:37] APK: https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40azzyjk/TodoList-92810aa3b34d42bd87ab669fb0b113d8-signed.apk
+
+아래 ```APK:``` 뒤에 있는 주소를 복사 붙여넣기 하면 apk파일 다운로드가 실행된다.
+
+추가로 앱을 빌드할때는 아래와 같은 요소가 포함되어 있어야 한다.
+```
+// appjson
+{
+    "expo": {
+    "sdkVersion": "36.0.0",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "co.test.app"
+    },
+    "android": {
+      "package": "co.test.app"
+    },
+    }
+}
+```
+```sdkVersion```, ```ios.bundleIdentifier```, ```android.package``` 가 있는지 확인해야 한다.
