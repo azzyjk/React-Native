@@ -8,12 +8,13 @@
       "web"
     ],
     "version": "1.0.0",
+    "sdkVersion": "36.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "resizeMode": "cover",
+      "backgroundColor": "#F23657"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -22,7 +23,13 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
-    }
+      "supportsTablet": true,
+      "bundleIdentifier": "co.test.app"
+    },
+    "android": {
+      "package": "co.test.app"
+    },
+    "description": "Made To Do List (nomadcorder)",
+    "githubUrl": "https://github.com/azzyjk/React-Native/tree/master/TodoList"
   }
 }
