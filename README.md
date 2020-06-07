@@ -249,8 +249,8 @@ react-native-dotenv 패키지를 설치하여 키값이 들어있는 파일을 �
 
 이후 키값이 필요한 부분에 key를 import한 뒤 변수처럼 사용하면 된다.
 
-```
-import API_KEY from "react-native-dotenv";
+```javascript
+import { API_KEY } from "react-native-dotenv";
 ```
 
 마지막으로 `.gitignore`파일에 `.env`파일을 추가하여 커밋되지 않도록 한다.
